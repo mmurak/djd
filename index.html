@@ -13,7 +13,7 @@
             font-size: 200%;
             width: 100%;
         }
-        .search-button{
+        .buttons{
             width: 48%;
             min-width: 100px;
             max-width: 400px;
@@ -24,7 +24,7 @@
             background: #cbe8fa;
             cursor: pointer;
         }
-        .search-button:active {
+        .buttons:active {
             box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
             transform: translateY(2px);
         }
@@ -35,7 +35,8 @@
         <h2 style="color: red">「あ〜さ」のみ（全角ひらがな／カタカナで入力、空白でクリア）</h2>
         <select class="toc-field" id="TOCSel" onchange="tocChange(this.value);"/>
         <input type="text" id="EntryField" class="entry-field"/><br/>
-        <input type="button" id="SearchButton" class="search-button" value="検索（Enter）" onclick="search();"/>
+        <input type="button" id="SearchButton" class="buttons" value="検索（Enter）" onclick="search();"/>
+        <input type="button" id="clearButton" class="buttons" value="クリア" onclick="clearField();"/>
         <script src="./resources/index.js"></script>
         <script>
             const tocSel = document.getElementById("TOCSel");
@@ -164,6 +165,11 @@ class Regulator {
                 windowOpen(volDir[0][2], val);
             }
 
+            function clearField() {
+                tocSel.selectedIndex = 0;
+                entryField.value = "";
+                entryField.focus();
+            }
         </script>
     </body>
 </html>
