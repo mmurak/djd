@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>（仮設「あ〜さ」）大日本國語辭典検索（オンライン版）</title>
+    <title>（仮設「あ〜ち」）大日本國語辭典検索（オンライン版）</title>
     <link rel="shortcut icon" href="redKiwiBird.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
@@ -31,8 +31,8 @@
     </style>
     </head>
     <body>
-        <h1 style="color: red">仮！大日本國語辭典検索（オンライン版）</h1>
-        <h2 style="color: red">「あ〜さ」のみ（全角ひらがな／カタカナで入力、空白でクリア）</h2>
+        <h1 style="color: red">仮設：大日本國語辭典検索（オンライン版）</h1>
+        <h2 style="color: red">「あ〜ち」のみ（全角ひらがな／カタカナで入力）</h2>
         <select class="toc-field" id="TOCSel" onchange="tocChange(this.value);"/>
         <input type="text" id="EntryField" class="entry-field"/><br/>
         <input type="button" id="SearchButton" class="buttons" value="検索（Enter）" onclick="search();"/>
@@ -122,11 +122,10 @@ class Regulator {
             }
             entryField.focus();
             document.addEventListener("keyup", function(evt) {
-                if (evt.key == " ") {
-                    entryField.value = "";
-                } else if (evt.key == "Enter")
+                if (evt.key == "Enter") {
                     search();
-                }, false);
+                }
+            }, false);
             
             
             function getDirectory(value) {
